@@ -33,10 +33,6 @@ const mapDispatchToProps = dispatch => ({
 
 class Main extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchDishes();
     this.props.fetchComments();
@@ -69,7 +65,7 @@ class Main extends Component {
           isLoading={this.props.dishes.isLoading}
           errMess={this.props.dishes.errMess}
           comments={this.props.comments.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId, 10))}
-          errMess={this.props.comments.errMess}
+          errmess={this.props.comments.errMess}
           postComment={this.props.postComment}
         />
       );
